@@ -1,7 +1,7 @@
 import React from "react";
 //
 //
-import { Grid, Fab, useScrollTrigger, Zoom, Paper } from "@material-ui/core";
+import { Grid, Fab, useScrollTrigger, Zoom } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
 //
 //
@@ -23,11 +23,11 @@ const useStyles = makeStyles((theme) => ({
   root: {
     position: "fixed",
     bottom: theme.spacing(2),
-    right: theme.spacing(2),
+    right: theme.spacing(2)
   },
   x: {
-    color: "black",
-  },
+    color: "black"
+  }
 }));
 //
 //
@@ -38,7 +38,7 @@ function ScrollTop(props) {
   //
   const trigger = useScrollTrigger({
     disableHysteresis: true,
-    threshold: 100,
+    threshold: 100
   });
 
   const handleClick = (event) => {
@@ -72,34 +72,32 @@ function App(props) {
   return (
     <React.Fragment>
       <Grid container direction="column">
-        <Paper>
-          <Grid item id="back-to-top-anchor">
-            <Appbar />
-          </Grid>
-          <Grid item>
-            <HeroBlock />
-          </Grid>
-          <Grid item>
-            <Features />
-          </Grid>
-          <Grid item>
-            <Download />
-          </Grid>
-          <Grid item>
-            <Questions />
-          </Grid>
-          <Grid item>
-            <EmailForm />
-          </Grid>
-          <Grid item>
-            <Footer />
-          </Grid>
-          <ScrollTop {...props}>
-            <Fab color="secondary" size="small" aria-label="scroll back to top">
-              <KeyboardArrowUpIcon />
-            </Fab>
-          </ScrollTop>
-        </Paper>
+        <Grid item id="back-to-top-anchor">
+          <Appbar />
+        </Grid>
+        <Grid item>
+          <HeroBlock />
+        </Grid>
+        <Grid item>
+          <Features />
+        </Grid>
+        <Grid item>
+          <Download />
+        </Grid>
+        <Grid item>
+          <Questions />
+        </Grid>
+        <Grid item>
+          <EmailForm />
+        </Grid>
+        <Grid item>
+          <Footer />
+        </Grid>
+        <ScrollTop {...props}>
+          <Fab color="secondary" size="small" aria-label="scroll back to top">
+            <KeyboardArrowUpIcon />
+          </Fab>
+        </ScrollTop>
       </Grid>
     </React.Fragment>
   );
